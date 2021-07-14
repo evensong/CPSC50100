@@ -1,6 +1,6 @@
 # CPSC50100
 Homework files
-Hello world,
+
 
 I'm just a noob starting a github account to share homework code. Anyone is free to look (real hackers probably won't find anything interesting here) or fork me, but I won't be allowing pull requests, since this repo is supposed to be my work. Please feel free to leave comments, though, I'm always looking to improve!
 
