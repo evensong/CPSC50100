@@ -1,4 +1,4 @@
-# Wk2_Lab
+# CPSC50100
 Homework files
 
 
