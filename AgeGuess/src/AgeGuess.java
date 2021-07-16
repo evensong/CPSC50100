@@ -1,4 +1,4 @@
-//Exercise 1 of Week 2 lab
+//Exercise 3 of Week 2 lab
 //Ben Haws
 
 import java.util.Scanner;
@@ -24,10 +24,17 @@ public class AgeGuess {
         System.out.println("You guessed that " + name + " is " + ageGuess + " years old.");
         
         if (ageGuess == age) {
-        	System.out.println("That is correct!");
+        	System.out.println("You guessed right!"); //this is slightly different than how the lab describes, but the functionality is the same
+        }                                             //I just built it with an == statement not a != statement in the earlier version. 
+        else {
+        	System.out.println("You guessed wrong!");
+        	if (ageGuess > age) {
+        		System.out.println(name + " is younger than that."); //user feedback
+        	}
+        	else {
+        		System.out.println(name + " is older than that.");
+        	}
         }
-        else
-        	System.out.println("That is incorrect. " + name + " is " + age + " years old.");
         
         scan.close(); //deallocate memory--not strictly necessary, but it makes Eclipse happy
 
