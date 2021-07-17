@@ -32,7 +32,7 @@ public class Cipher {
 			
 			if (input >= LOWER_BOUND && input <= UPPER_BOUND) { //Ensure user input is within correct range. NOTE: Does not validate noninteger input
 				plainText += input;
-				input = 0; 									  //After adding input to plainText, we reset input so we only need one input variable
+				input = 0; 				//After adding input to plainText, we reset input so we only need one input variable
 				i++;
 			}
 			else {
