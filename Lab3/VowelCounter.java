@@ -5,35 +5,33 @@ import java.util.Scanner;
 public class VowelCounter { 
 	
 	static private int countLowerVowels(String input) { //count lowercase vowels within input string
-		int vowelsCount = 0;
-		char[] vowels = {'a', 'e', 'i', 'o', 'u'};
-		
+		char[] vowels = {'a', 'e', 'i', 'o', 'u'};		
 		int countA = 0, countE = 0, countI = 0, countO = 0, countU = 0; //count individual vowels
 		
-		if (input.length() != 0) { 
-			
-			for (int index = 0; index < input.length(); index++) { //iterate through each character in input
+		if (input.length() == 0) { //protect against null strings
+			return (countA + countE + countI + countO + countU);
+		}
 
-				for (int index2 = 0; index2 < vowels.length; index2++) { //at current input index, check if each vowel is present
+		for (int index = 0; index < input.length(); index++) { //iterate through each character in input
+
+			for (int index2 = 0; index2 < vowels.length; index2++) { //check character against each vowel
+
+				if (input.charAt(index) == vowels[index2]) { //if character matches the vowel, increment count	
 					
-					if (input.charAt(index) == vowels[index2]) {
-						vowelsCount++;
-						switch (index2) {
-						case 0: countA++; break; 
-						case 1: countE++; break;
-						case 2: countI++; break;
-						case 3: countO++; break;
-						case 4: countU++; break;
-						}
+					switch (index2) {	//decide which vowel needs to get incremented based on vowels index
+					case 0: countA++; break; 
+					case 1: countE++; break; 
+					case 2: countI++; break;
+					case 3: countO++; break;
+					case 4: countU++; break;
 					}
-					
-				}
-
+				}					
 			}
 		}
+		
 		System.out.println("Detected " + countA + " a('s), " + countE + " e('s), " + countI + " i('s), "
 				+ countO + " o('s), and " + countU + " u('s).");
-		return vowelsCount;
+		return (countA + countE + countI + countO + countU); //return sum of all vowels (vowels summed per assignment spec)
 	}
 
 	public static void main(String[] args) {
@@ -48,13 +46,13 @@ public class VowelCounter {
 		input = scan.nextLine();
 		
 		while (!input.equalsIgnoreCase("exit")) { //user types "exit" to exit program
-			System.out.println("Counting lowercase vowels.");
+			System.out.println("\nCounting lowercase vowels.");
 			vowels = countLowerVowels(input);
 			
-			System.out.println("Counting all vowels to calculate number of nonvowel characters.");
+			System.out.println("\nCounting all vowels to calculate number of nonvowel characters.");
 			nonVowels = input.length() - countLowerVowels(input.toLowerCase());
 
-			System.out.print("Your string has " + vowels + " vowels and " + nonVowels
+			System.out.print("\nYour string has " + vowels + " vowels and " + nonVowels
 					+ " nonvowel characters.\nEnter a new string (type \"exit\" to close): ");
 			input = scan.nextLine();
 		}
