@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Account {
-	static int numAccounts = 0;
+	private static int numAccounts = 0;
 	
 	Account(){
 		numAccounts++;
