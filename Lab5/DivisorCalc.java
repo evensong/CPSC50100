@@ -22,7 +22,7 @@ public class DivisorCalc {
 				System.out.print("Enter first integer:");
 				
 				input1 = scan.nextInt();	
-				if(input1 == 0) {System.out.println("Goodbye!"); return;} 
+				if(input1 == 0) {System.out.println("Goodbye!"); scan.close(); return;} 
 				
 				System.out.print("Enter second integer: ");
 				input2 = scan.nextInt();
